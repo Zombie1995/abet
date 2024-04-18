@@ -1,14 +1,14 @@
 import { merchStore } from "entities/merch/model";
 import { newsStore } from "entities/news/model";
 import { useEffect } from "react";
-import useScroll from "shared/model/useScroll/useScroll";
 import { AbetTitle } from "widgets/abet-title";
 import { Footer } from "widgets/footer";
 import { Merch } from "widgets/merch";
 import { News } from "widgets/news";
+import useStartScreen from "./model";
 
 export default function Main() {
-  const scrollPosition = useScroll();
+  const isStartScreen = useStartScreen();
   // const r = useParallax(0.1);
 
   // MockNews and MockMerch
@@ -84,14 +84,14 @@ export default function Main() {
       <div className="z-[100] fixed top-0 left-0 w-full h-16 bg-black" />
       <div
         className={`${
-          scrollPosition < 1 ? "top-1/2 -translate-y-1/2" : "top-2 scale-[0.11]"
+          isStartScreen ? "top-1/2 -translate-y-1/2" : "top-2 scale-[0.11]"
         } z-[100] fixed left-1/2 -translate-x-1/2 transition-all duration-700 origin-top`}
       >
         <AbetTitle />
       </div>
       <div
         className={`${
-          scrollPosition < 1 ? "h-[100svh] duration-500" : "h-0 duration-1000"
+          isStartScreen ? "h-[100svh] duration-500" : "h-0 duration-1000"
         } transition-all`}
       />
       <div className="h-[150svh]">
