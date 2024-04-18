@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 // Function returns animation killer function which invoked when component change its visibility
 export type AnimationEnterCallback = (el: HTMLElement) => null | (() => void);
@@ -16,56 +16,58 @@ interface Props {
   animatedShow?: boolean;
   // Use animation on element mount
   appear?: boolean;
+  className?: string;
   children?: ReactNode;
 }
 
-const AnimatedElement = ({
-  onEnter,
-  onExit,
-  animatedShow = true,
-  children,
-}: Props) => {
-  const el = useRef<HTMLDivElement>(null);
-  const [show, setShow] = useState(animatedShow);
-  const [killEnterAnimation, setKillEnterAnimation] = useState<
-    (() => void) | null
-  >(null);
-  const [killExitAnimation, setKillExitAnimation] = useState<
-    (() => void) | null
-  >(null);
+const AnimatedElement = React.memo(
+  ({
+    onEnter,
+    onExit,
+    animatedShow = true,
+    className = "",
+    children,
+  }: Props) => {
+    const el = useRef<HTMLDivElement>(null);
+    const [show, setShow] = useState(animatedShow);
+    const killEnterAnimation = useRef<(() => void) | null>(null);
+    const killExitAnimation = useRef<(() => void) | null>(null);
 
-  useEffect(() => {
-    const handleAnimatedShowChange = () => {
-      if (animatedShow) {
-        killExitAnimation && killExitAnimation();
+    useEffect(() => {
+      const handleAnimatedShowChange = () => {
+        if (animatedShow) {
+          killExitAnimation.current && killExitAnimation.current();
 
-        setShow(animatedShow);
+          setShow(true);
 
-        if (!onEnter) {
-          return;
+          if (!onEnter) {
+            return;
+          }
+
+          killEnterAnimation.current = onEnter(el.current!);
+        } else {
+          killEnterAnimation.current && killEnterAnimation.current();
+
+          if (!onExit) {
+            setShow(false);
+            return;
+          }
+
+          killExitAnimation.current = onExit(el.current!, () => {
+            setShow(false);
+          });
         }
+      };
 
-        setKillEnterAnimation(onEnter(el.current!));
-      } else {
-        killEnterAnimation && killEnterAnimation();
+      handleAnimatedShowChange();
+    }, [animatedShow, onEnter, onExit]);
 
-        if (!onExit) {
-          setShow(animatedShow);
-          return;
-        }
-
-        setKillExitAnimation(
-          onExit(el.current!, () => {
-            setShow(animatedShow);
-          })
-        );
-      }
-    };
-
-    handleAnimatedShowChange();
-  }, [animatedShow, killEnterAnimation, killExitAnimation, onEnter, onExit]);
-
-  return <div ref={el}>{show && children}</div>;
-};
+    return (
+      <div className={className} ref={el}>
+        {show && children}
+      </div>
+    );
+  }
+);
 
 export default AnimatedElement;
