@@ -4,7 +4,7 @@ import { observer } from "mobx-react-lite";
 
 export const News = observer(() => {
   return (
-    <div className="w-[43svw]">
+    <div className="lg:w-[43svw]">
       <p className="text-[40px] italic font-light">Новости</p>
       <div className="h-4" />
       <div className="flex flex-col gap-6 h-[70svh] overflow-y-scroll no-scrollbar">

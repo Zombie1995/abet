@@ -6,7 +6,7 @@ interface Props {
 
 export const MerchCard = ({ img, title, price }: Props) => {
   return (
-    <div className="h-[50svh] border-2 border-white p-6 flex flex-col">
+    <div className="min-h-[500px] h-[50svh] border-2 border-white p-6 flex flex-col">
       <img className="h-[70%] w-full object-cover" src={img} />
       <div className="min-h-4" />
       <p>{title}</p>

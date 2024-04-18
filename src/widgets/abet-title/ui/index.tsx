@@ -25,7 +25,9 @@ export const AbetTitle = React.memo(() => {
           <Letter letter="Т" delay={0.5} />
         </>
       ) : (
-        <p className="text-[500px] font-medium tracking-wider">АБЕТ</p>
+        <p className="lg:text-[500px] md:text-[300px] sm:text-[200px] text-[100px] font-medium tracking-wider">
+          АБЕТ
+        </p>
       )}
     </button>
   );

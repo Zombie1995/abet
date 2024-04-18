@@ -84,7 +84,9 @@ export default function Main() {
       <div className="z-[100] fixed top-0 left-0 w-full h-16 bg-black" />
       <div
         className={`${
-          isStartScreen ? "top-1/2 -translate-y-1/2" : "top-2 scale-[0.11]"
+          isStartScreen
+            ? "top-1/2 -translate-y-1/2"
+            : "md:top-2 md:scale-[0.08] sm:top-0 sm:scale-[0.15] -top-4 scale-[0.25]"
         } z-[100] fixed left-1/2 -translate-x-1/2 transition-all duration-700 origin-top`}
       >
         <AbetTitle />
@@ -94,10 +96,10 @@ export default function Main() {
           isStartScreen ? "h-[100svh] duration-500" : "h-0 duration-1000"
         } transition-all`}
       />
-      <div className="h-[150svh]">
+      <div className="lg:h-[150svh] h-[240svh]">
         <div className="sticky top-0">
           <div className="h-24" />
-          <div className="flex gap-[2svw]">
+          <div className="flex max-lg:flex-col gap-[2svw]">
             <News />
             <Merch />
           </div>
