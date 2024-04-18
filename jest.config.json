@@ -1,0 +1,10 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": [
+    "<rootDir>/setupTests.ts"
+  ],
+  "modulePaths": [
+    "src"
+  ]
+}
