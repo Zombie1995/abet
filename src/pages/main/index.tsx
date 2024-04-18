@@ -1,28 +1,109 @@
-import useParallax from "shared/model/useParallax/useParallax";
+import { merchStore } from "entities/merch/model";
+import { newsStore } from "entities/news/model";
+import { useEffect } from "react";
 import useScroll from "shared/model/useScroll/useScroll";
 import { AbetTitle } from "widgets/abet-title";
+import { Footer } from "widgets/footer";
+import { Merch } from "widgets/merch";
+import { News } from "widgets/news";
 
 export default function Main() {
   const scrollPosition = useScroll();
-  const r = useParallax(0.1);
+  // const r = useParallax(0.1);
+
+  // MockNews and MockMerch
+  useEffect(() => {
+    newsStore.setNews([
+      {
+        title: "Abet the best",
+        shortContent:
+          "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
+        content:
+          "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+      },
+      {
+        title: "Abet the best",
+        shortContent:
+          "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
+        content:
+          "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+      },
+      {
+        title: "Abet the best",
+        shortContent:
+          "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
+        content:
+          "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+      },
+      {
+        title: "Abet the best",
+        shortContent:
+          "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
+        content:
+          "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+      },
+    ]);
+
+    merchStore.setField([
+      {
+        title: "Худи",
+        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
+        price: 9823,
+      },
+      {
+        title: "Худи",
+        img: "https://www.tradeinn.com/f/13757/137575318/fila-victor-hoodie.jpg",
+        price: 9823,
+      },
+      {
+        title:
+          "Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи Худи",
+        img: "http://static.tildacdn.com/tild3464-3934-4234-a130-363739633938/b582d0a987c6dbef42ca.jpg",
+        price: 9823,
+      },
+      {
+        title: "Худи",
+        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
+        price: 9823,
+      },
+      {
+        title: "Худи",
+        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
+        price: 9823,
+      },
+      {
+        title: "Худи",
+        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
+        price: 9823,
+      },
+    ]);
+  }, []);
 
   return (
-    <div>
+    <div className="px-[6svw]">
+      <div className="z-[100] fixed top-0 left-0 w-full h-16 bg-black" />
       <div
         className={`${
-          scrollPosition < 10
-            ? "top-1/2 -translate-y-1/2"
-            : "top-2 scale-[0.11]"
-        } fixed left-1/2 -translate-x-1/2 transition-all duration-1000 origin-top`}
+          scrollPosition < 1 ? "top-1/2 -translate-y-1/2" : "top-2 scale-[0.11]"
+        } z-[100] fixed left-1/2 -translate-x-1/2 transition-all duration-700 origin-top`}
       >
         <AbetTitle />
       </div>
-      <div className="h-[1000px]" />
-      <div>
-        <div ref={r} className="size-[200px] bg-white" />
+      <div
+        className={`${
+          scrollPosition < 1 ? "h-[100svh] duration-500" : "h-0 duration-1000"
+        } transition-all`}
+      />
+      <div className="h-[150svh]">
+        <div className="sticky top-0">
+          <div className="h-24" />
+          <div className="flex gap-[2svw]">
+            <News />
+            <Merch />
+          </div>
+        </div>
       </div>
-      <div className="size-[200px] bg-gray-500" />
-      <div className="h-[10000px]" />
+      <Footer />
     </div>
   );
 }

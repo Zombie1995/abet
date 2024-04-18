@@ -14,7 +14,7 @@ export const AbetTitle = React.memo(() => {
 
   return (
     <button
-      className="flex h-[450px] items-center"
+      className="flex h-[450px] items-center -translate-y-8"
       onClick={handleChangeMusicState}
     >
       {musicState ? (
