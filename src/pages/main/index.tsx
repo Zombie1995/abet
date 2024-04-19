@@ -1,6 +1,11 @@
 import { merchStore } from "entities/merch/model";
 import { newsStore } from "entities/news/model";
 import { useEffect } from "react";
+import artem from "shared/assets/img/artem.png";
+import egor from "shared/assets/img/egor.png";
+import igor from "shared/assets/img/igor.png";
+import pasha from "shared/assets/img/pasha.png";
+import tigran from "shared/assets/img/tigran.png";
 import { AbetTitle } from "widgets/abet-title";
 import { Merch } from "widgets/merch";
 import { News } from "widgets/news";
@@ -73,7 +78,7 @@ export default function Main() {
         className={`${
           isStartScreen
             ? "top-1/2 -translate-y-1/2"
-            : "md:top-2 md:scale-[0.08] sm:top-0 sm:scale-[0.15] -top-4 scale-[0.25]"
+            : "md:top-4 md:scale-[0.08] sm:top-0 sm:scale-[0.15] -top-4 scale-[0.25]"
         } z-[100] fixed left-1/2 -translate-x-1/2 transition-all duration-700 origin-top`}
       >
         <AbetTitle />
@@ -91,6 +96,13 @@ export default function Main() {
             <Merch />
           </div>
         </div>
+      </div>
+      <div className="flex justify-between">
+        <img className="w-[17svw] object-cover" src={pasha} />
+        <img className="w-[17svw] object-cover" src={tigran} />
+        <img className="w-[17svw] object-cover" src={igor} />
+        <img className="w-[17svw] object-cover" src={artem} />
+        <img className="w-[17svw] object-cover" src={egor} />
       </div>
     </>
   );
