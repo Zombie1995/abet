@@ -105,6 +105,7 @@ export default function Main() {
           </div>
         </div>
       </div>
+      <div className="h-4" />
       <Footer />
     </div>
   );
