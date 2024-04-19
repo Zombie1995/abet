@@ -14,8 +14,8 @@ interface Props {
   onExit: AnimationExitCallback;
   // Use this visibility toggle if you want exit animation
   animatedShow?: boolean;
-  // Use animation on element mount
-  appear?: boolean;
+  // Show initially even if animatedShow is false
+  showInitially?: boolean;
   className?: string;
   children?: ReactNode;
 }
@@ -25,11 +25,12 @@ const AnimatedElement = React.memo(
     onEnter,
     onExit,
     animatedShow = true,
+    showInitially = false,
     className = "",
     children,
   }: Props) => {
     const el = useRef<HTMLDivElement>(null);
-    const [show, setShow] = useState(animatedShow);
+    const [show, setShow] = useState(animatedShow || showInitially);
     const killEnterAnimation = useRef<(() => void) | null>(null);
     const killExitAnimation = useRef<(() => void) | null>(null);
 

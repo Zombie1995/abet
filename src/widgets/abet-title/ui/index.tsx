@@ -17,18 +17,10 @@ export const AbetTitle = React.memo(() => {
       className="flex h-[450px] items-center -translate-y-8"
       onClick={handleChangeMusicState}
     >
-      {musicState ? (
-        <>
-          <Letter letter="А" delay={0.3} />
-          <Letter letter="Б" delay={0.1} />
-          <Letter letter="Е" delay={0.7} />
-          <Letter letter="Т" delay={0.5} />
-        </>
-      ) : (
-        <p className="lg:text-[500px] md:text-[300px] sm:text-[200px] text-[100px] font-medium tracking-wider">
-          АБЕТ
-        </p>
-      )}
+      <Letter letter="А" delay={0.3} active={musicState} />
+      <Letter letter="Б" delay={0.1} active={musicState} />
+      <Letter letter="Е" delay={0.7} active={musicState} />
+      <Letter letter="Т" delay={0.5} active={musicState} />
     </button>
   );
 });

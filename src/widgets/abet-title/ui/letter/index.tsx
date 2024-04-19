@@ -6,9 +6,10 @@ import AnimatedElement from "shared/ui/animated/animated";
 interface Props {
   letter: string;
   delay: number;
+  active: boolean;
 }
 
-export const Letter = React.memo(({ letter, delay }: Props) => {
+export const Letter = React.memo(({ letter, delay, active }: Props) => {
   return (
     <AnimatedElement
       onEnter={(el: HTMLElement) => {
@@ -34,10 +35,14 @@ export const Letter = React.memo(({ letter, delay }: Props) => {
           anim.kill();
         };
       }}
-      onExit={(el: HTMLElement, done: () => void) => {
-        done();
-        return () => {};
+      onExit={(el: HTMLElement) => {
+        const anim = gsap.to(el, { x: 0, y: 0 });
+        return () => {
+          anim.kill();
+        };
       }}
+      animatedShow={active}
+      showInitially={true}
     >
       <p className="text-[500px] font-medium tracking-wider">{letter}</p>
     </AnimatedElement>
