@@ -44,7 +44,9 @@ export const Letter = React.memo(({ letter, delay, active }: Props) => {
       animatedShow={active}
       showInitially={true}
     >
-      <p className="text-[500px] font-medium tracking-wider">{letter}</p>
+      <p className="lg:text-[500px] md:text-[300px] sm:text-[200px] text-[100px] font-medium tracking-wider">
+        {letter}
+      </p>
     </AnimatedElement>
   );
 });
