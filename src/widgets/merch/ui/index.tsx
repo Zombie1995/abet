@@ -36,7 +36,7 @@ export const Merch = observer(() => {
           showMerch ? "h-[70svh]" : "h-0"
         } transition-all duration-500 sm:grid sm:grid-cols-2 flex flex-col sm:gap-[2svw] gap-6 md:h-[70svh] overflow-y-scroll no-scrollbar`}
       >
-        <div className="sm:hidden min-h-0 col-span-2" />
+        <div className="md:hidden min-h-0 col-span-2" />
         {merchStore.merch.map((merchItem, index) => (
           <MerchCard
             key={index}

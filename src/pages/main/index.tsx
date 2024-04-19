@@ -1,12 +1,10 @@
 import { merchStore } from "entities/merch/model";
 import { newsStore } from "entities/news/model";
 import { useEffect } from "react";
-import artem from "shared/assets/img/artem.png";
-import egor from "shared/assets/img/egor.png";
-import igor from "shared/assets/img/igor.png";
-import pasha from "shared/assets/img/pasha.png";
-import tigran from "shared/assets/img/tigran.png";
+import alena from "shared/assets/img/alena.png";
+import kate from "shared/assets/img/kate.png";
 import { AbetTitle } from "widgets/abet-title";
+import { AskAbet } from "widgets/ask-abet";
 import { Merch } from "widgets/merch";
 import { News } from "widgets/news";
 import useStartScreen from "./model";
@@ -97,12 +95,17 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between">
-        <img className="w-[17svw] object-cover" src={pasha} />
-        <img className="w-[17svw] object-cover" src={tigran} />
-        <img className="w-[17svw] object-cover" src={igor} />
-        <img className="w-[17svw] object-cover" src={artem} />
-        <img className="w-[17svw] object-cover" src={egor} />
+      <div className="h-10" />
+      <AskAbet />
+      <div className="">
+        <p className="text-[48px]">Камео со звездами</p>
+        <div className="flex">
+          <div>
+            <p>Екатерина Зуберева</p>
+          </div>
+          <img className="w-[15svw] object-cover" src={kate} />
+        </div>
+        <img className="w-[15svw] object-cover" src={alena} />
       </div>
     </>
   );
