@@ -44,6 +44,9 @@ export const News = observer(() => {
             shortContent={newsItem.shortContent}
           />
         ))}
+        <button className="bg-white min-h-[40px] h-[40px] w-full">
+          Больше новостей
+        </button>
       </div>
     </div>
   );

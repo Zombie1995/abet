@@ -61,21 +61,6 @@ export default function Main() {
         img: "http://static.tildacdn.com/tild3464-3934-4234-a130-363739633938/b582d0a987c6dbef42ca.jpg",
         price: 9823,
       },
-      {
-        title: "Худи",
-        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
-        price: 9823,
-      },
-      {
-        title: "Худи",
-        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
-        price: 9823,
-      },
-      {
-        title: "Худи",
-        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
-        price: 9823,
-      },
     ]);
   }, []);
 

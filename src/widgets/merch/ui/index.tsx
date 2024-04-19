@@ -46,6 +46,9 @@ export const Merch = observer(() => {
             price={merchItem.price}
           />
         ))}
+        <button className="bg-white min-h-[40px] h-[40px] w-full col-span-2">
+          Больше мерча
+        </button>
       </div>
     </div>
   );
