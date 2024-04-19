@@ -42,6 +42,7 @@ export const News = observer(() => {
             key={index}
             title={newsItem.title}
             shortContent={newsItem.shortContent}
+            img={newsItem.img}
           />
         ))}
         <button className="bg-white min-h-[40px] h-[40px] w-full">

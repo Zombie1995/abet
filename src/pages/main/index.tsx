@@ -20,6 +20,7 @@ export default function Main() {
           "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
         content:
           "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
       },
       {
         title: "Abet the best",
@@ -27,6 +28,7 @@ export default function Main() {
           "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
         content:
           "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+        img: "",
       },
       {
         title: "Abet the best",
@@ -34,6 +36,7 @@ export default function Main() {
           "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
         content:
           "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+        img: "",
       },
       {
         title: "Abet the best",
@@ -41,6 +44,7 @@ export default function Main() {
           "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
         content:
           "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+        img: "",
       },
     ]);
 

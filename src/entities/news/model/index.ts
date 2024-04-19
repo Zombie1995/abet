@@ -4,6 +4,7 @@ export type NewsItem = {
   content: string;
   shortContent: string;
   title: string;
+  img: string;
 };
 
 class NewsStore {
