@@ -97,15 +97,28 @@ export default function Main() {
       </div>
       <div className="h-10" />
       <AskAbet />
-      <div className="">
-        <p className="text-[48px]">Камео со звездами</p>
-        <div className="flex">
-          <div>
-            <p>Екатерина Зуберева</p>
+      <div>
+        <h1>Камео со звездами</h1>
+        <div className="h-4" />
+        <div className="flex gap-[2svw]">
+          <div className="flex border-2 border-white p-8 w-[43svw] justify-between">
+            <div>
+              <p>Екатерина Зуберева</p>
+              <p>Участник команды КВН "Тестостерон"</p>
+            </div>
+            <img
+              className="w-[15svw] object-contain -translate-y-4"
+              src={kate}
+            />
           </div>
-          <img className="w-[15svw] object-cover" src={kate} />
+          <div className="flex border-2 border-white p-8 w-[43svw] justify-between">
+            <div>
+              <p>Алена Шамис</p>
+              <p>Участник команды КВН "Тестостерон"</p>
+            </div>
+            <img className="w-[18svw] object-contain" src={alena} />
+          </div>
         </div>
-        <img className="w-[15svw] object-cover" src={alena} />
       </div>
     </>
   );

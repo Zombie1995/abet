@@ -10,6 +10,10 @@
     p {
         @apply text-[#ffffff]
     }
+
+    h1 {
+        @apply text-[40px] italic font-light text-[#ffffff]
+    }
 }
 
 @layer utilities {

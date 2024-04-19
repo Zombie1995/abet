@@ -10,7 +10,7 @@ export const Merch = observer(() => {
   return (
     <div className="lg:w-[43svw]">
       <div className="max-md:hidden">
-        <p className="text-[40px] italic font-light">Мерч</p>
+        <h1>Мерч</h1>
         <div className="h-4" />
       </div>
       <button
@@ -20,7 +20,7 @@ export const Merch = observer(() => {
         }}
       >
         <div className="flex items-center justify-between">
-          <p className="text-[40px] italic font-light text-left">Мерч</p>
+          <h1>Мерч</h1>
           <img
             className={`${
               showMerch ? "rotate-180" : ""

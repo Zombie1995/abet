@@ -10,7 +10,7 @@ export const News = observer(() => {
   return (
     <div className="lg:w-[43svw]">
       <div className="max-md:hidden">
-        <p className="text-[40px] italic font-light">Новости</p>
+        <h1>Новости</h1>
         <div className="h-4" />
       </div>
       <button
@@ -20,7 +20,7 @@ export const News = observer(() => {
         }}
       >
         <div className="flex items-center justify-between">
-          <p className="text-[40px] italic font-light text-left">Новости</p>
+          <h1>Новости</h1>
           <img
             className={`${
               showNews ? "rotate-180" : ""
