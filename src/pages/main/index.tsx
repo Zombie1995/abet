@@ -2,7 +2,6 @@ import { merchStore } from "entities/merch/model";
 import { newsStore } from "entities/news/model";
 import { useEffect } from "react";
 import { AbetTitle } from "widgets/abet-title";
-import { Footer } from "widgets/footer";
 import { Merch } from "widgets/merch";
 import { News } from "widgets/news";
 import useStartScreen from "./model";
@@ -69,8 +68,7 @@ export default function Main() {
   }, []);
 
   return (
-    <div className="px-[6svw]">
-      <div className="z-[100] fixed top-0 left-0 w-full h-16 bg-black" />
+    <>
       <div
         className={`${
           isStartScreen
@@ -94,8 +92,6 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="h-4" />
-      <Footer />
-    </div>
+    </>
   );
 }
