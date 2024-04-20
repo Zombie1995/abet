@@ -8,6 +8,8 @@ interface Props {
   // Like w-[15svw]
   width?: string;
   name: string;
+  answer?: string;
+  answerLoading?: boolean;
 }
 
 export const AbetMember = ({
@@ -16,12 +18,19 @@ export const AbetMember = ({
   img,
   width = "w-[15svw]",
   name,
+  answer = "",
+  answerLoading = false,
 }: Props) => {
   return (
     <button
       className={`${width} relative max-md:w-[50svw] max-md:flex justify-center items-center`}
     >
-      <Answer className={answerPosition} fromLeft={answerFromLeft} />
+      <Answer
+        className={answerPosition}
+        fromLeft={answerFromLeft}
+        text={answer}
+        loading={answerLoading}
+      />
       <img
         className={`${width} max-md:w-[50svw] object-cover hover:-rotate-12 transition-all`}
         src={img}

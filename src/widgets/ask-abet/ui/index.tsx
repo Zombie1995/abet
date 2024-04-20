@@ -18,6 +18,8 @@ export const AskAbet = () => {
             width="w-[15svw]"
             answerFromLeft={true}
             name="Паша"
+            answer={""}
+            answerLoading={false}
           />
           <AbetMember
             img={tigran}
@@ -25,6 +27,8 @@ export const AskAbet = () => {
             width="w-[15svw]"
             answerFromLeft={true}
             name="Тигран"
+            answer={""}
+            answerLoading={false}
           />
           <AbetMember
             img={igor}
@@ -32,6 +36,8 @@ export const AskAbet = () => {
             width="w-[22svw]"
             answerFromLeft={false}
             name="Игорь"
+            answer={""}
+            answerLoading={false}
           />
           <AbetMember
             img={artem}
@@ -39,6 +45,8 @@ export const AskAbet = () => {
             width="w-[15svw]"
             answerFromLeft={false}
             name="Артем"
+            answer={""}
+            answerLoading={false}
           />
           <AbetMember
             img={egor}
@@ -46,6 +54,8 @@ export const AskAbet = () => {
             width="w-[15svw]"
             answerFromLeft={false}
             name="Егор"
+            answer={""}
+            answerLoading={false}
           />
         </div>
         <Ask />
