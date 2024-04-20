@@ -29,6 +29,11 @@ export const useShowButton = (
 ) => {
   const scrollPosition = useScroll(ref);
 
+  useEffect(() => {
+    if (ref?.current) ref.current.scrollTop = 1;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref?.current]);
+
   const showButton =
     (ref?.current
       ? ref.current.scrollHeight - ref.current.clientHeight

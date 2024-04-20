@@ -10,12 +10,12 @@ export const Stars = () => {
       <div className="flex gap-[2svw] max-lg:flex-col">
         <StarCard
           name={"Екатерина Зуберева"}
-          content={`Участник команды КВН "Тестостерон", дизайнер`}
+          content={`Участник команды КВН "Тестостерон", дизайнер, хакер`}
           image={kate}
         />
         <StarCard
           name={"Алена Шамис"}
-          content={`Участник команды КВН "Тестостерон", дизайнер`}
+          content={`Участник команды КВН "Тестостерон", дизайнер, хакер`}
           image={alena}
         />
       </div>

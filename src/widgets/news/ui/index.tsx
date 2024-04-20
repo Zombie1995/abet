@@ -14,7 +14,9 @@ export const News = observer(() => {
   return (
     <div className="relative lg:w-[43svw]">
       <BottomButton
-        className={`${showButton ? "" : "hidden"} absolute bottom-4 left-4`}
+        className={`${
+          showButton ? "" : "hidden"
+        } max-md:hidden absolute bottom-4 left-4`}
         scrollRef={scrollRef}
       />
       <div className="max-md:hidden">
