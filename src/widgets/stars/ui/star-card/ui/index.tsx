@@ -6,7 +6,7 @@ interface Props {
 
 export const StarCard = ({ name, content, image }: Props) => {
   return (
-    <div className="flex p-8 lg:w-[43svw] justify-between max-md:flex-col-reverse items-center">
+    <div className="flex p-8 lg:h-[40svh] lg:w-[43svw] justify-between max-md:flex-col-reverse items-center">
       <div>
         <p className="text-[60px] leading-[1.2]">{name}</p>
         <div className="h-2" />
