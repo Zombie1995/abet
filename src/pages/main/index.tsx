@@ -76,7 +76,7 @@ export default function Main() {
           isStartScreen
             ? "top-1/2 -translate-y-1/2"
             : "md:top-4 md:scale-[0.08] sm:top-0 sm:scale-[0.15] -top-4 scale-[0.25]"
-        } z-[100] fixed left-1/2 -translate-x-1/2 transition-all duration-700 origin-top`}
+        } z-[1000] fixed left-1/2 -translate-x-1/2 transition-all duration-700 origin-top`}
       >
         <AbetTitle />
       </div>
