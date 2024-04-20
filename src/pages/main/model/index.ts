@@ -1,4 +1,4 @@
-import useScroll from "shared/model/useScroll/useScroll";
+import useScroll from "shared/model/useScroll";
 
 // Returns if it's start screen
 const useStartScreen = () => {

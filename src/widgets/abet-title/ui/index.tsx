@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import abetMusic from "shared/assets/music/abet.mp3";
-import useAudio from "shared/model/useAudio/useAudio";
+import useAudio from "shared/model/useAudio";
 import { Letter } from "./letter";
 
 export const AbetTitle = React.memo(() => {

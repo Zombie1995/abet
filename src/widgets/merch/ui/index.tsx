@@ -1,14 +1,22 @@
 import { MerchCard } from "entities/merch";
 import { merchStore } from "entities/merch/model";
 import { observer } from "mobx-react-lite";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import arrow from "shared/assets/icons/arrow.svg";
+import { BottomButton } from "shared/ui/bottom-button";
+import { useShowButton } from "shared/ui/bottom-button/model";
 
 export const Merch = observer(() => {
   const [showMerch, setShowMerch] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const showButton = useShowButton(scrollRef);
 
   return (
-    <div className="lg:w-[43svw]">
+    <div className="relative lg:w-[43svw]">
+      <BottomButton
+        className={`${showButton ? "" : "hidden"} absolute bottom-4 left-4`}
+        scrollRef={scrollRef}
+      />
       <div className="max-md:hidden">
         <h1>Мерч</h1>
         <div className="h-4" />
@@ -32,9 +40,10 @@ export const Merch = observer(() => {
         <div className="h-[1px] w-[100svw] -mx-[6svw] bg-[#F5F5F5]" />
       </button>
       <div
+        ref={scrollRef}
         className={`${
           showMerch ? "h-[70svh]" : "h-0"
-        } transition-all duration-500 sm:grid sm:grid-cols-2 flex flex-col sm:gap-[2svw] gap-6 md:h-[70svh] overflow-y-scroll no-scrollbar`}
+        } transition-all duration-500 sm:grid sm:grid-cols-2 flex flex-col sm:gap-[2svw] gap-6 md:h-[70svh] overflow-y-scroll md:border-2 md:border-white`}
       >
         <div className="md:hidden min-h-0 col-span-2" />
         {merchStore.merch.map((merchItem, index) => (

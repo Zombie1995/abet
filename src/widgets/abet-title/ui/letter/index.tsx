@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { CustomEase } from "gsap/all";
 import React from "react";
-import AnimatedElement from "shared/ui/animated/animated";
+import AnimatedElement from "shared/ui/animated";
 
 interface Props {
   letter: string;

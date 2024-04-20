@@ -6,7 +6,7 @@ interface Props {
 
 export const NewsCard = ({ title, shortContent, img = "" }: Props) => {
   return (
-    <div className="sm:flex border-2 border-white p-8">
+    <div className="sm:flex md:outline md:outline-2 md:outline-white max-md:border-2 max-md:border-white p-8">
       {img && (
         <>
           <img
