@@ -45,6 +45,22 @@ export const Merch = observer(() => {
             price={merchItem.price}
           />
         ))}
+        <div className="min-h-[500px] h-[50svh] border-2 border-white p-6 flex flex-col">
+          <img
+            className="h-[70%] w-full object-cover"
+            src="https://main-cdn.sbermegamarket.ru/hlr-system/186/284/657/548/182/6/100028800840b0.jpg"
+          />
+          <div className="min-h-4" />
+          <p>Лаваш</p>
+          <div className="grow" />
+          <div className="min-h-4" />
+          <div className="flex items-center justify-between">
+            <p>Бесценно</p>
+            <button className="min-h-[30px] min-w-[100px] w-min bg-white">
+              Скоро
+            </button>
+          </div>
+        </div>
         <button className="bg-white min-h-[40px] h-[40px] w-full col-span-2">
           Больше мерча
         </button>

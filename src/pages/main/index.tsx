@@ -1,12 +1,11 @@
 import { merchStore } from "entities/merch/model";
 import { newsStore } from "entities/news/model";
 import { useEffect } from "react";
-import alena from "shared/assets/img/alena.png";
-import kate from "shared/assets/img/kate.png";
 import { AbetTitle } from "widgets/abet-title";
 import { AskAbet } from "widgets/ask-abet";
 import { Merch } from "widgets/merch";
 import { News } from "widgets/news";
+import { Stars } from "widgets/stars";
 import useStartScreen from "./model";
 
 export default function Main() {
@@ -97,29 +96,8 @@ export default function Main() {
       </div>
       <div className="h-10" />
       <AskAbet />
-      <div>
-        <h1>Камео со звездами</h1>
-        <div className="h-4" />
-        <div className="flex gap-[2svw]">
-          <div className="flex border-2 border-white p-8 w-[43svw] justify-between">
-            <div>
-              <p>Екатерина Зуберева</p>
-              <p>Участник команды КВН "Тестостерон"</p>
-            </div>
-            <img
-              className="w-[15svw] object-contain -translate-y-4"
-              src={kate}
-            />
-          </div>
-          <div className="flex border-2 border-white p-8 w-[43svw] justify-between">
-            <div>
-              <p>Алена Шамис</p>
-              <p>Участник команды КВН "Тестостерон"</p>
-            </div>
-            <img className="w-[18svw] object-contain" src={alena} />
-          </div>
-        </div>
-      </div>
+      <div className="h-10" />
+      <Stars />
     </>
   );
 }
