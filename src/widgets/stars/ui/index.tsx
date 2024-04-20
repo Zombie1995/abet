@@ -6,8 +6,8 @@ export const Stars = () => {
   return (
     <div>
       <h1>Камео со звездами</h1>
-      <div className="h-4" />
-      <div className="flex gap-[2svw]">
+      <div className="max-md:hidden h-4" />
+      <div className="flex gap-[2svw] max-lg:flex-col">
         <StarCard
           name={"Екатерина Зуберева"}
           content={`Участник команды КВН "Тестостерон", дизайнер`}

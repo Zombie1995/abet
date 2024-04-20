@@ -8,35 +8,56 @@ export const AskAbet = () => {
   return (
     <div>
       <h1>Спроси абет</h1>
-      <div className="flex justify-between">
-        <button className="w-[15svw] hover:-rotate-12 transition-all">
-          <img className="w-[15svw] object-cover" src={pasha} />
+      <div className="md:hidden">
+        <div className="h-6" />
+        <p>Ваш вопрос</p>
+        <div className="h-1" />
+        <input
+          className="h-10 w-full p-4 rounded-full"
+          defaultValue={"Что на абет?"}
+        />
+        <div className="h-10" />
+      </div>
+      <div className="flex justify-between items-center max-md:flex-col max-md:gap-4">
+        <button className="w-[15svw] max-md:w-[50svw] hover:-rotate-12 transition-all max-md:flex justify-center items-center">
+          <img
+            className="w-[15svw] max-md:w-[50svw] object-cover"
+            src={pasha}
+          />
           <p className="text-[36px]">Паша</p>
         </button>
-        <button className="w-[15svw] hover:-rotate-12 transition-all">
-          <img className="w-[15svw] object-cover" src={tigran} />
+        <button className="w-[15svw] max-md:w-[50svw] hover:-rotate-12 transition-all max-md:flex justify-center items-center">
+          <img
+            className="w-[15svw] max-md:w-[50svw] object-cover"
+            src={tigran}
+          />
           <p className="text-[36px]">Тигран</p>
         </button>
-        <button className="w-[22svw] hover:rotate-12 transition-all">
-          <img className="w-[22svw] object-cover" src={igor} />
+        <button className="w-[22svw] max-md:w-[50svw] hover:rotate-12 transition-all max-md:flex justify-center items-center">
+          <img className="w-[22svw] max-md:w-[50svw] object-cover" src={igor} />
           <p className="text-[36px]">Игорь</p>
         </button>
-        <button className="w-[15svw] hover:rotate-12 transition-all">
-          <img className="w-[15svw] object-cover" src={artem} />
+        <button className="w-[15svw] max-md:w-[50svw] hover:rotate-12 transition-all max-md:flex justify-center items-center">
+          <img
+            className="w-[15svw] max-md:w-[50svw] object-cover"
+            src={artem}
+          />
           <p className="text-[36px]">Артем</p>
         </button>
-        <button className="w-[15svw] hover:rotate-12 transition-all">
-          <img className="w-[15svw] object-cover" src={egor} />
+        <button className="w-[15svw] max-md:w-[50svw] hover:rotate-12 transition-all max-md:flex justify-center items-center">
+          <img className="w-[15svw] max-md:w-[50svw] object-cover" src={egor} />
           <p className="text-[36px]">Егор</p>
         </button>
       </div>
-      <div className="h-10" />
-      <p>Ваш вопрос</p>
-      <div className="h-1" />
-      <input
-        className="h-10 w-full p-4 rounded-full"
-        defaultValue={"Что на абет?"}
-      />
+      <div className="max-md:hidden">
+        <div className="h-10" />
+        <p>Ваш вопрос</p>
+        <div className="h-1" />
+        <input
+          className="h-10 w-full p-4 rounded-full"
+          defaultValue={"Что на абет?"}
+        />
+      </div>
     </div>
   );
 };
