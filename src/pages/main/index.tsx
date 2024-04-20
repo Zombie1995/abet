@@ -85,7 +85,7 @@ export default function Main() {
           isStartScreen ? "h-[100svh] duration-500" : "h-0 duration-1000"
         } transition-all`}
       />
-      <div className="lg:h-[150svh]">
+      <div className="lg:h-[100svh]">
         <div className="sticky top-0">
           <div className="h-24" />
           <div className="flex max-lg:flex-col gap-[2svw]">
