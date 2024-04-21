@@ -14,6 +14,7 @@ export const AskAbet = () => {
         Задайте вопрос любимой команде. Напишите вопрос и нажмите на вашего
         ♡любимчика♡
       </p>
+      <div className="h-6" />
       <div className="flex md:flex-col flex-col-reverse">
         <div className="flex justify-between items-center max-md:flex-col max-md:gap-4">
           <AbetMember
@@ -62,6 +63,7 @@ export const AskAbet = () => {
             answerLoading={false}
           />
         </div>
+        <div className="h-6" />
         <Ask />
       </div>
     </>

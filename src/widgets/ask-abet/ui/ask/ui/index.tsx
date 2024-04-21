@@ -1,7 +1,6 @@
 export const Ask = () => {
   return (
     <div>
-      <div className="h-6" />
       <p>Ваш вопрос</p>
       <div className="h-1" />
       <input
