@@ -16,11 +16,12 @@ export const NewsCard = ({ title, shortContent, img = "" }: Props) => {
           <div className="sm:min-w-6 max-sm:min-h-2" />
         </>
       )}
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <p className="text-[60px] leading-[1.2]">{title}</p>
         <div className="h-4" />
         <p className="">{shortContent}</p>
         <div className="h-4" />
+        <div className="grow" />
         <button className="bg-white min-h-[40px] min-w-[160px] self-end">
           Перейти
         </button>

@@ -1,6 +1,7 @@
 import { merchStore } from "entities/merch/model";
 import { newsStore } from "entities/news/model";
 import { useEffect } from "react";
+import ronaldoNews from "shared/assets/img/ronaldo-news.png";
 import { AbetTitle } from "widgets/abet-title";
 import { AskAbet } from "widgets/ask-abet";
 import { Merch } from "widgets/merch";
@@ -16,45 +17,20 @@ export default function Main() {
   useEffect(() => {
     newsStore.setNews([
       {
-        title: "Abet the best",
-        shortContent:
-          "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
-        content:
-          "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
-        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
+        title: "Пополнение в команде",
+        shortContent: "Легенда футбола, но кто?",
+        content: "Легенда футбола, но кто?",
+        img: ronaldoNews,
       },
       {
-        title: "Abet the best",
-        shortContent:
-          "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
-        content:
-          "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
-        img: "",
-      },
-      {
-        title: "Abet the best",
-        shortContent:
-          "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
-        content:
-          "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
-        img: "",
-      },
-      {
-        title: "Abet the best",
-        shortContent:
-          "Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah Haahahah",
-        content:
-          "hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah hahahahah",
+        title: "АБЕТ САЙТ",
+        shortContent: "Встречайте",
+        content: "Встречайте",
         img: "",
       },
     ]);
 
     merchStore.setField([
-      {
-        title: "Худи",
-        img: "https://cdn1.ozone.ru/s3/multimedia-t/6703776497.jpg",
-        price: 9823,
-      },
       {
         title: "Худи",
         img: "https://www.tradeinn.com/f/13757/137575318/fila-victor-hoodie.jpg",
