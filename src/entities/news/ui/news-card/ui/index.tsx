@@ -17,7 +17,7 @@ export const NewsCard = ({ title, shortContent, img = "" }: Props) => {
         </>
       )}
       <div className="flex flex-col w-full">
-        <p className="text-[60px] leading-[1.2]">{title}</p>
+        <p className="md:text-[60px] text-[40px] leading-[1.2]">{title}</p>
         <div className="h-4" />
         <p className="">{shortContent}</p>
         <div className="h-4" />
