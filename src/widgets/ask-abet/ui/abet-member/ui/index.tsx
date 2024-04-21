@@ -32,7 +32,9 @@ export const AbetMember = ({
         loading={answerLoading}
       />
       <img
-        className={`${width} max-md:w-[50svw] object-cover hover:-rotate-12 transition-all`}
+        className={`${width} ${
+          answerFromLeft ? "hover:-rotate-12" : "hover:rotate-12"
+        } max-md:w-[50svw] object-cover transition-all`}
         src={img}
       />
       <p className="text-[36px]">{name}</p>
