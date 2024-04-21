@@ -6,6 +6,7 @@ import { AbetTitle } from "widgets/abet-title";
 import { AskAbet } from "widgets/ask-abet";
 import { Merch } from "widgets/merch";
 import { News } from "widgets/news";
+import { Producers } from "widgets/producers";
 import { Stars } from "widgets/stars";
 import useStartScreen from "./model";
 
@@ -71,6 +72,8 @@ export default function Main() {
       </div>
       <div className="h-10" />
       <AskAbet />
+      <div className="h-10" />
+      <Producers />
       <div className="h-10" />
       <Stars />
     </>
