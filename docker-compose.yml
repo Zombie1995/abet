@@ -12,6 +12,6 @@ services:
       resources:
         limits:
           cpus: "4.0"
-          memory: 200M
+          memory: 600M
     # volumes:
     #   - /certs:/certs
