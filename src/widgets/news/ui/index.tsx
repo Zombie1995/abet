@@ -3,6 +3,7 @@ import { newsStore } from "entities/news/model";
 import { observer } from "mobx-react-lite";
 import { useRef, useState } from "react";
 import arrow from "shared/assets/icons/arrow.svg";
+import { utcToRussianDate } from "shared/model/convertDate";
 import { BottomButton } from "shared/ui/bottom-button";
 import { useShowButton } from "shared/ui/bottom-button/model";
 
@@ -61,12 +62,13 @@ export const News = observer(() => {
           } transition-all duration-500 flex flex-col gap-6 md:h-[70svh] overflow-y-scroll md:border-2 md:border-white`}
         >
           <div className="md:hidden h-4" />
-          {newsStore.news.map((newsItem, index) => (
+          {newsStore.news.map((newsItem) => (
             <NewsCard
-              key={index}
+              key={newsItem.id}
               title={newsItem.title}
-              shortContent={newsItem.shortContent}
-              img={newsItem.img}
+              shortContent={newsItem.short_body}
+              img={newsItem.title_picture}
+              date={utcToRussianDate(newsItem.date)}
             />
           ))}
           <button className="bg-white min-h-[40px] h-[40px] w-full">

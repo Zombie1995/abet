@@ -55,19 +55,21 @@ export const Merch = observer(() => {
         } transition-all duration-500 sm:grid sm:grid-cols-2 flex flex-col sm:gap-[2svw] gap-6 md:h-[70svh] overflow-y-scroll md:border-2 md:border-white`}
       >
         <div className="md:hidden min-h-0 col-span-2" />
-        {merchStore.merch.map((merchItem, index) => (
+        {merchStore.merch.map((merchItem) => (
           <MerchCard
-            key={index}
-            img={merchItem.img}
+            key={merchItem.id}
+            img={merchItem.url}
             title={merchItem.title}
             price={merchItem.price}
+            description={merchItem.description}
           />
         ))}
         <FakeMerchCard
           img={dimka}
-          title={"НевыДимка худе"}
+          title={"НевыДимка худи"}
           price={"1 Гирос"}
           buttonName="Закончился"
+          description="СТИЛЁВО"
         />
         <FakeMerchCard
           img={
@@ -76,6 +78,7 @@ export const Merch = observer(() => {
           title={"Лаваш"}
           price={"89 ₽"}
           buttonName="Под заказ"
+          description="ВКУСНО"
         />
         <button className="bg-white min-h-[40px] h-[40px] w-full col-span-2">
           Больше мерча

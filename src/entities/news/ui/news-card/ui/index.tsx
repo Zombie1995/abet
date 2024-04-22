@@ -2,9 +2,15 @@ interface Props {
   title: string;
   shortContent: string;
   img?: string;
+  date?: string;
 }
 
-export const NewsCard = ({ title, shortContent, img = "" }: Props) => {
+export const NewsCard = ({
+  title,
+  shortContent,
+  img = "",
+  date = "",
+}: Props) => {
   return (
     <div className="sm:flex md:outline md:outline-2 md:outline-white max-md:border-2 max-md:border-white p-8">
       {img && (
@@ -17,14 +23,18 @@ export const NewsCard = ({ title, shortContent, img = "" }: Props) => {
         </>
       )}
       <div className="flex flex-col w-full">
-        <p className="md:text-[60px] text-[40px] leading-[1.2]">{title}</p>
+        <p className="text-[40px] leading-[1.2]">{title}</p>
         <div className="h-4" />
         <p className="">{shortContent}</p>
         <div className="h-4" />
         <div className="grow" />
-        <button className="bg-white min-h-[40px] min-w-[160px] self-end">
-          Перейти
-        </button>
+        <div className="flex items-center">
+          <p>{date}</p>
+          <div className="grow" />
+          <button className="bg-white min-h-[40px] min-w-[160px] self-end">
+            Перейти
+          </button>
+        </div>
       </div>
     </div>
   );

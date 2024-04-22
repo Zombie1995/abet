@@ -1,21 +1,21 @@
 import { makeAutoObservable } from "mobx";
-
-export type NewsItem = {
-  content: string;
-  shortContent: string;
-  title: string;
-  img: string;
-};
+import { NewsItem, fetchNews } from "../api";
 
 class NewsStore {
   news: Array<NewsItem> = [];
 
   constructor() {
     makeAutoObservable(this);
+
+    this.getNews();
   }
 
   setNews = (news: Array<NewsItem>) => {
     this.news = news;
+  };
+
+  getNews = async () => {
+    this.setNews(await fetchNews());
   };
 }
 

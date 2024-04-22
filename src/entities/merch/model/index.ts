@@ -1,20 +1,21 @@
 import { makeAutoObservable } from "mobx";
-
-type MerchItem = {
-  img: string;
-  title: string;
-  price: number;
-};
+import { MerchItem, fetchMerch } from "../api";
 
 class MerchStore {
   merch: Array<MerchItem> = [];
 
   constructor() {
     makeAutoObservable(this);
+
+    this.getMerch();
   }
 
-  setField = (merch: Array<MerchItem>) => {
+  setMerch = (merch: Array<MerchItem>) => {
     this.merch = merch;
+  };
+
+  getMerch = async () => {
+    this.setMerch(await fetchMerch());
   };
 }
 
