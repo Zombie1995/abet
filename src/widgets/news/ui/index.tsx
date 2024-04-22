@@ -34,6 +34,10 @@ export const News = observer(() => {
           className="md:hidden"
           onClick={() => {
             setShowNews(!showNews);
+            scrollRef.current?.parentElement?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
           }}
         >
           <div className="flex items-center justify-between">

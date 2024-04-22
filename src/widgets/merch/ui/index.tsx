@@ -28,6 +28,10 @@ export const Merch = observer(() => {
         className="md:hidden"
         onClick={() => {
           setShowMerch(!showMerch);
+          scrollRef.current?.parentElement?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }}
       >
         <div className="flex items-center justify-between">
