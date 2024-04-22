@@ -1,0 +1,12 @@
+# To run production: docker-compose up --build -d
+version: "3.4"
+services:
+  abet_docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    # volumes:
+    #   - /certs:/certs
