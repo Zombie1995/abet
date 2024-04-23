@@ -2,7 +2,7 @@ import { abetTitleStore } from "entities/abet-title/model";
 import { observer } from "mobx-react-lite";
 import { useCallback, useState } from "react";
 import abetMusic from "shared/assets/music/abet.mp3";
-import useAudio from "shared/model/useAudio";
+import useAudio from "shared/model/use-audio";
 import { Letter } from "./letter";
 
 export const AbetTitle = observer(() => {

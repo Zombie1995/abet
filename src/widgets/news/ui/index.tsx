@@ -6,6 +6,7 @@ import arrow from "shared/assets/icons/arrow.svg";
 import { utcToRussianDate } from "shared/model/convertDate";
 import { BottomButton } from "shared/ui/bottom-button";
 import { useShowButton } from "shared/ui/bottom-button/model";
+import { Loading } from "shared/ui/loading";
 
 export const News = observer(() => {
   const [showNews, setShowNews] = useState(false);
@@ -57,16 +58,21 @@ export const News = observer(() => {
           } transition-all duration-500 flex flex-col gap-6 md:h-[70svh] overflow-y-scroll md:border-2 md:border-white`}
         >
           <div className="md:hidden h-4" />
-          {newsStore.news.map((newsItem) => (
-            <NewsCard
-              key={newsItem.id}
-              newsId={newsItem.id}
-              title={newsItem.title}
-              shortContent={newsItem.short_body}
-              img={newsItem.title_picture}
-              date={utcToRussianDate(newsItem.date)}
-            />
-          ))}
+
+          {newsStore.loading ? (
+            <Loading className="self-center size-[96px]" />
+          ) : (
+            newsStore.news.map((newsItem) => (
+              <NewsCard
+                key={newsItem.id}
+                newsId={newsItem.id}
+                title={newsItem.title}
+                shortContent={newsItem.short_body}
+                img={newsItem.title_picture}
+                date={utcToRussianDate(newsItem.date)}
+              />
+            ))
+          )}
           <button className="bg-white min-h-[40px] h-[40px] w-full">
             Больше новостей
           </button>

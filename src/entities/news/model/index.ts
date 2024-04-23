@@ -28,6 +28,7 @@ class NewsItemStore {
 
 class NewsStore {
   news: Array<NewsItem> = [];
+  loading: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -39,8 +40,16 @@ class NewsStore {
     this.news = news;
   };
 
+  setLoading = (loading: boolean) => {
+    this.loading = loading;
+  };
+
   getNews = async () => {
-    this.setNews(await fetchNews());
+    this.setLoading(true);
+    fetchNews().then((news) => {
+      this.setNews(news);
+      this.setLoading(false);
+    });
   };
 }
 

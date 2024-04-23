@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import { useEffect } from "react";
-import useScroll from "shared/model/useScroll";
+import useScroll from "shared/model/use-scroll";
 
 export const useStartScreen = () => {
   const scrollPosition = useScroll();
