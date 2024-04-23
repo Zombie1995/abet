@@ -10,6 +10,7 @@ interface Props {
   name: string;
   answer?: string;
   answerLoading?: boolean;
+  onClick?: () => void;
 }
 
 export const AbetMember = ({
@@ -20,10 +21,12 @@ export const AbetMember = ({
   name,
   answer = "",
   answerLoading = false,
+  onClick = () => {},
 }: Props) => {
   return (
     <button
       className={`${width} relative max-md:w-[50svw] max-md:flex justify-center items-center`}
+      onClick={onClick}
     >
       <Answer
         className={answerPosition}

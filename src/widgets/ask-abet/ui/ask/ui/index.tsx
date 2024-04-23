@@ -1,4 +1,11 @@
+import { askAbetStore } from "entities/ask-abet/model";
+import { useCallback } from "react";
+
 export const Ask = () => {
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    askAbetStore.setQuestion(e.target.value);
+  }, []);
+
   return (
     <div>
       <p>Ваш вопрос</p>
@@ -6,6 +13,7 @@ export const Ask = () => {
       <input
         className="h-10 w-full p-4 rounded-full"
         defaultValue={"Что на абет?"}
+        onChange={handleChange}
       />
     </div>
   );
