@@ -2,7 +2,7 @@ import { newsItemStore } from "entities/news/model";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { utcToRussianDate } from "shared/model/convertDate";
+import { utcToRussianDate } from "shared/model/convert-date";
 import { Loading } from "shared/ui/loading";
 
 const NewsItem = observer(() => {

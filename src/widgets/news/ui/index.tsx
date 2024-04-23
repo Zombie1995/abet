@@ -3,7 +3,7 @@ import { newsStore } from "entities/news/model";
 import { observer } from "mobx-react-lite";
 import { useRef, useState } from "react";
 import arrow from "shared/assets/icons/arrow.svg";
-import { utcToRussianDate } from "shared/model/convertDate";
+import { utcToRussianDate } from "shared/model/convert-date";
 import { BottomButton } from "shared/ui/bottom-button";
 import { useShowButton } from "shared/ui/bottom-button/model";
 import { Loading } from "shared/ui/loading";
