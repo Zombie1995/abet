@@ -4,6 +4,7 @@ import egor from "shared/assets/img/egor.png";
 import igor from "shared/assets/img/igor.png";
 import pasha from "shared/assets/img/pasha.png";
 import tigran from "shared/assets/img/tigran.png";
+import { RaceConditionGuard } from "shared/model/race-condition-guard";
 import { fetchAnswer } from "../api";
 
 type AbetMemberItem = {
@@ -73,6 +74,7 @@ const staticAbetMembers: Array<AbetMemberItem> = [
 class AskAbetStore {
   abetMembers: Array<AbetMemberItem> = staticAbetMembers;
   question: string = "";
+  answerRaceConditionGuard = new RaceConditionGuard();
 
   constructor() {
     makeAutoObservable(this);
@@ -95,16 +97,18 @@ class AskAbetStore {
         return member;
       })
     );
-    fetchAnswer(this.question, character).then((answer) =>
-      this.setAbetMembers(
-        staticAbetMembers.map((member) => {
-          if (member.engName === character) {
-            return { ...member, answer };
-          }
-          return member;
-        })
-      )
-    );
+    this.answerRaceConditionGuard
+      .getGuardedPromise(fetchAnswer(this.question, character))
+      .then((answer) =>
+        this.setAbetMembers(
+          staticAbetMembers.map((member) => {
+            if (member.engName === character) {
+              return { ...member, answer };
+            }
+            return member;
+          })
+        )
+      );
   };
 }
 
