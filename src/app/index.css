@@ -16,6 +16,10 @@
     h1 {
         @apply text-[40px] italic font-light text-[#ffffff]
     }
+
+    h2 {
+        @apply text-[40px] leading-[1.2] text-[#ffffff]
+    }
 }
 
 @layer utilities {

@@ -19,3 +19,11 @@ export const fetchNews = async () => {
     await axios.get<NewsResponse>(`${import.meta.env.VITE_BASE_URL}/news`)
   ).data.items;
 };
+
+export const fetchNewsItem = async (id: string) => {
+  return (
+    await axios.get<NewsItem>(`${import.meta.env.VITE_BASE_URL}/news`, {
+      params: { id },
+    })
+  ).data;
+};

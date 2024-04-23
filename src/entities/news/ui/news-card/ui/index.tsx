@@ -1,4 +1,5 @@
 interface Props {
+  newsId: number;
   title: string;
   shortContent: string;
   img?: string;
@@ -6,6 +7,7 @@ interface Props {
 }
 
 export const NewsCard = ({
+  newsId,
   title,
   shortContent,
   img = "",
@@ -23,17 +25,19 @@ export const NewsCard = ({
         </>
       )}
       <div className="flex flex-col w-full">
-        <p className="text-[40px] leading-[1.2]">{title}</p>
+        <h2>{title}</h2>
         <div className="h-4" />
         <p className="">{shortContent}</p>
         <div className="h-4" />
         <div className="grow" />
-        <div className="flex items-center">
+        <div className="flex max-sm:flex-col-reverse items-center">
           <p>{date}</p>
-          <div className="grow" />
-          <button className="bg-white min-h-[40px] min-w-[160px] self-end">
-            Перейти
-          </button>
+          <div className="grow min-h-2" />
+          <a className="max-sm:w-full" href={`/news/${newsId}`}>
+            <button className="bg-white min-h-[40px] sm:min-w-[160px] max-sm:w-full">
+              Перейти
+            </button>
+          </a>
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
+import { AbetTitle } from "entities/abet-title";
 import { ReactNode } from "react";
+import { Footer } from "./footer";
 
 interface Props {
   children?: ReactNode;
@@ -6,13 +8,15 @@ interface Props {
 
 export const DefaultLayout = ({ children }: Props) => {
   return (
-    <>
-      <div className="z-[1000] fixed top-0 left-0 w-full h-16 bg-black" />
+    <div className="min-h-[100svh] flex flex-col">
+      <Footer />
+      <div className="h-16" />
+      <AbetTitle />
       <div className="px-[6svw]">{children}</div>
-      <div className="h-20" />
+      <div className="min-h-20 grow" />
       <p className="text-center text-black pb-1 bg-white">
         2024 Все права защищены
       </p>
-    </>
+    </div>
   );
 };

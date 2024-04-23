@@ -65,6 +65,7 @@ export const News = observer(() => {
           {newsStore.news.map((newsItem) => (
             <NewsCard
               key={newsItem.id}
+              newsId={newsItem.id}
               title={newsItem.title}
               shortContent={newsItem.short_body}
               img={newsItem.title_picture}

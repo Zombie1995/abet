@@ -10,14 +10,14 @@ export const Stars = () => {
       <div className="max-md:hidden h-4" />
       <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-[2svw]">
         <StarCard
-          name={"Екатерина Зуберева"}
-          content={`Участник команды КВН "Тестостерон", дизайнер, хакер`}
-          image={kate}
-        />
-        <StarCard
           name={"Алена Шамис"}
           content={`Участник команды КВН "Тестостерон", дизайнер, хакер`}
           image={alena}
+        />
+        <StarCard
+          name={"Екатерина Зуберева"}
+          content={`Участник команды КВН "Тестостерон", дизайнер, хакер`}
+          image={kate}
         />
         <StarCard
           name={"Максим Базунов"}
