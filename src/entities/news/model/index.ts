@@ -13,11 +13,15 @@ class NewsItemStore {
     this.newsItem = newsItem;
   };
 
+  setLoading = (loading: boolean) => {
+    this.loading = loading;
+  };
+
   getNewsItem = async (id: string) => {
-    this.loading = true;
+    this.setLoading(true);
     fetchNewsItem(id).then((newsItem) => {
       this.setNewsItem(newsItem);
-      this.loading = false;
+      this.setLoading(false);
     });
   };
 }
