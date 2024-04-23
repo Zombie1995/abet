@@ -1,4 +1,4 @@
-import { NewsCard, SubscribeButton } from "entities/news";
+import { NewsCard } from "entities/news";
 import { newsStore } from "entities/news/model";
 import { observer } from "mobx-react-lite";
 import { useRef, useState } from "react";
@@ -14,9 +14,7 @@ export const News = observer(() => {
 
   return (
     <>
-      <div className="md:hidden pb-10 pt-[50svh] flex justify-center">
-        <SubscribeButton />
-      </div>
+      <div className="md:hidden h-40" />
       <div className="relative lg:w-[43svw]">
         <BottomButton
           className={`${
@@ -25,10 +23,7 @@ export const News = observer(() => {
           scrollRef={scrollRef}
         />
         <div className="max-md:hidden">
-          <div className="flex items-center justify-between">
-            <h1>Новости</h1>
-            <SubscribeButton />
-          </div>
+          <h1>Новости</h1>
           <div className="h-4" />
         </div>
         <button
