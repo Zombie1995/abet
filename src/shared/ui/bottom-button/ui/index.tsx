@@ -1,4 +1,5 @@
 import React from "react";
+import { useShowButton } from "../model";
 
 interface Props {
   className?: string;
@@ -8,9 +9,12 @@ interface Props {
 
 export const BottomButton = React.memo(
   ({ className = "", onClick = () => {}, scrollRef }: Props) => {
+    const showButton = useShowButton(scrollRef);
     return (
       <button
-        className={`${className} bg-black outline outline-2 outline-white rounded-full size-10 flex items-center justify-center animate-bounce`}
+        className={`${className} ${
+          showButton ? "" : "hidden"
+        } bg-black outline outline-2 outline-white rounded-full size-10 flex items-center justify-center animate-bounce`}
         onClick={() => {
           onClick();
           if (scrollRef?.current) {

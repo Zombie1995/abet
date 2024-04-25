@@ -5,22 +5,18 @@ import { useRef, useState } from "react";
 import arrow from "shared/assets/icons/arrow.svg";
 import { utcToRussianDate } from "shared/model/convert-date";
 import { BottomButton } from "shared/ui/bottom-button";
-import { useShowButton } from "shared/ui/bottom-button/model";
 import { Loading } from "shared/ui/loading";
 
 export const News = observer(() => {
   const [showNews, setShowNews] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const showButton = useShowButton(scrollRef);
 
   return (
     <>
       <div className="md:hidden h-40" />
       <div className="relative lg:w-[43svw]">
         <BottomButton
-          className={`${
-            showButton ? "" : "hidden"
-          } max-md:hidden absolute bottom-4 left-4`}
+          className="max-md:hidden absolute bottom-4 left-4"
           scrollRef={scrollRef}
         />
         <div className="max-md:hidden">
