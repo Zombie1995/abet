@@ -1,4 +1,4 @@
-export function utcToRussianDate(utcString: string) {
+export function toRussianDate(utcString: string) {
   const monthNames = [
     "января",
     "февраля",
@@ -16,11 +16,11 @@ export function utcToRussianDate(utcString: string) {
 
   const date = new Date(utcString);
 
-  const day = date.getUTCDate();
-  const monthIndex = date.getUTCMonth();
-  const year = date.getUTCFullYear();
-  const hours = date.getUTCHours();
-  const minutes = date.getUTCMinutes();
+  const day = date.getDate();
+  const monthIndex = date.getMonth();
+  const year = date.getFullYear();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
 
   const formattedHours = hours < 10 ? `0${hours}` : hours;
   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;

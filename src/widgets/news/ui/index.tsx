@@ -3,7 +3,7 @@ import { newsStore } from "entities/news/model";
 import { observer } from "mobx-react-lite";
 import { useRef, useState } from "react";
 import arrow from "shared/assets/icons/arrow.svg";
-import { utcToRussianDate } from "shared/model/convert-date";
+import { toRussianDate } from "shared/model/convert-date";
 import { BottomButton } from "shared/ui/bottom-button";
 import { Loading } from "shared/ui/loading";
 
@@ -65,7 +65,7 @@ export const News = observer(() => {
                 title={newsItem.title}
                 shortContent={newsItem.short_body}
                 img={newsItem.title_picture}
-                date={utcToRussianDate(newsItem.date)}
+                date={toRussianDate(newsItem.date)}
               />
             ))
           )}
