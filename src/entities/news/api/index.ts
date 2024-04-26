@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ImageType } from "shared/model/types";
 
 export type NewsItem = {
   id: number;
@@ -7,7 +8,7 @@ export type NewsItem = {
   body: string;
   title: string;
   title_picture: string;
-  pictures: Array<{ url: string }>;
+  pictures: Array<ImageType>;
 };
 
 export type NewsResponse = {

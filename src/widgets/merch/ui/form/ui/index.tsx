@@ -1,8 +1,9 @@
 import { merchStore } from "entities/merch/model";
 import React, { useCallback, useState } from "react";
+import Portal from "shared/ui/portal/ui";
 import { fetchForm } from "../api";
 
-export const Form = React.memo(() => {
+const FormWithState = React.memo(() => {
   const [fio, setFIO] = useState("");
   const [contacts, setContacts] = useState("TG: @user");
 
@@ -40,5 +41,17 @@ export const Form = React.memo(() => {
         Купить
       </button>
     </div>
+  );
+});
+
+export const Form = React.memo(() => {
+  return (
+    <Portal>
+      <div
+        className="z-[1000] fixed top-0 left-0 h-screen w-screen bg-black/60 backdrop-blur-sm"
+        onClick={() => merchStore.setSelectedMerch(null)}
+      />
+      <FormWithState />
+    </Portal>
   );
 });

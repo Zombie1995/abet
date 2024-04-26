@@ -7,7 +7,6 @@ import dimka from "shared/assets/img/dimka.png";
 import { BottomButton } from "shared/ui/bottom-button";
 import { useShowButton } from "shared/ui/bottom-button/model";
 import { Loading } from "shared/ui/loading";
-import Portal from "shared/ui/portal/ui";
 import { Form } from "./form";
 
 export const Merch = observer(() => {
@@ -100,15 +99,7 @@ export const Merch = observer(() => {
           </button>
         </div>
       </div>
-      {merchStore.selectedMerch && (
-        <Portal>
-          <div
-            className="z-[1000] fixed top-0 left-0 h-[100svh] w-[100svw] bg-black/60 backdrop-blur-sm"
-            onClick={() => merchStore.setSelectedMerch(null)}
-          />
-          <Form />
-        </Portal>
-      )}
+      {merchStore.selectedMerch && <Form />}
     </>
   );
 });

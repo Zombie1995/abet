@@ -1,3 +1,4 @@
+import { imageViewerStore } from "entities/image-viewer/model";
 import { newsItemStore } from "entities/news/model";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
@@ -17,16 +18,28 @@ const NewsItem = observer(() => {
       <div className="h-10" />
       <div className="flex gap-[2svw] max-md:flex-col">
         <div className="grid grid-cols-4 gap-2 md:w-[43svw]">
-          {newsItemStore.newsItem?.pictures.map((el, index) => (
-            <img
+          {newsItemStore.newsItem?.pictures.slice(0, 5).map((el, index) => (
+            <button
               key={index}
               className={`${
                 index === 0
-                  ? "col-span-4 md:h-[60svh] h-[30svh] object-contain"
-                  : "max-md:hidden h-[15svh] object-cover"
+                  ? "col-span-4 md:h-[60svh] h-[30svh]"
+                  : "md:h-[15svh] h-[7.5svh]"
               } w-full`}
-              src={el.url}
-            />
+              onClick={() => {
+                imageViewerStore.openCollection(
+                  newsItemStore.newsItem!.pictures,
+                  index
+                );
+              }}
+            >
+              <img
+                className={`${
+                  index === 0 ? "object-contain" : "object-cover"
+                } h-full w-full`}
+                src={el.url}
+              />
+            </button>
           ))}
         </div>
         <div className="flex flex-col md:w-[43svw]">
