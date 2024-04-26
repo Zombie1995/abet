@@ -1,26 +1,37 @@
 import { FakeMerchCard, MerchCard } from "entities/merch";
 import { merchStore } from "entities/merch/model";
 import { observer } from "mobx-react-lite";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import arrow from "shared/assets/icons/arrow.svg";
 import dimka from "shared/assets/img/dimka.png";
+import { HEADER_HEIGHT } from "shared/model/constants";
 import { BottomButton } from "shared/ui/bottom-button";
-import { useShowButton } from "shared/ui/bottom-button/model";
 import { Loading } from "shared/ui/loading";
 import { Form } from "./form";
 
 export const Merch = observer(() => {
   const [showMerch, setShowMerch] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const showButton = useShowButton(scrollRef);
+
+  const handleScrollToSection = useCallback(() => {
+    const element = scrollRef.current;
+    if (element) {
+      const elementTop = element.parentElement!.getBoundingClientRect().top;
+      const scrollTop = document.documentElement.scrollTop;
+      const offset = HEADER_HEIGHT;
+
+      window.scrollTo({
+        top: scrollTop + elementTop - offset,
+        behavior: "smooth",
+      });
+    }
+  }, []);
 
   return (
     <>
       <div className="relative lg:w-[43svw]">
         <BottomButton
-          className={`${
-            showButton ? "" : "hidden"
-          } max-md:hidden absolute bottom-4 left-4`}
+          className="max-md:hidden absolute bottom-4 left-4"
           scrollRef={scrollRef}
         />
         <div className="max-md:hidden">
@@ -32,10 +43,7 @@ export const Merch = observer(() => {
           onClick={() => {
             setShowMerch(!showMerch);
             if (!showMerch) {
-              scrollRef.current?.parentElement?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
+              handleScrollToSection();
             }
           }}
         >

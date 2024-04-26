@@ -1,7 +1,7 @@
 import { NewsCard } from "entities/news";
 import { newsStore } from "entities/news/model";
 import { observer } from "mobx-react-lite";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import arrow from "shared/assets/icons/arrow.svg";
 import { toRussianDate } from "shared/model/convert-date";
 import { BottomButton } from "shared/ui/bottom-button";
@@ -10,6 +10,20 @@ import { Loading } from "shared/ui/loading";
 export const News = observer(() => {
   const [showNews, setShowNews] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollToSection = useCallback(() => {
+    const element = scrollRef.current;
+    if (element) {
+      const elementTop = element.parentElement!.getBoundingClientRect().top;
+      const scrollTop = document.documentElement.scrollTop;
+      const offset = 64;
+
+      window.scrollTo({
+        top: scrollTop + elementTop - offset,
+        behavior: "smooth",
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -28,10 +42,7 @@ export const News = observer(() => {
           onClick={() => {
             setShowNews(!showNews);
             if (!showNews) {
-              scrollRef.current?.parentElement?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
+              handleScrollToSection();
             }
           }}
         >

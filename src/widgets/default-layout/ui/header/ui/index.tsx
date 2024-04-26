@@ -1,8 +1,12 @@
 import arrow from "shared/assets/icons/arrow.svg";
+import { HEADER_HEIGHT } from "shared/model/constants";
 
-export const Footer = () => {
+export const Header = () => {
   return (
-    <div className="z-[1000] fixed top-0 left-0 w-full h-16 bg-black flex items-center">
+    <div
+      style={{ height: `${HEADER_HEIGHT}px` }}
+      className="z-[1000] fixed top-0 left-0 w-full bg-black flex items-center"
+    >
       {window.location.pathname !== "/" && (
         <a href="/" className="flex items-center ml-4">
           <button>

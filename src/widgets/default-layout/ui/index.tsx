@@ -1,7 +1,7 @@
 import { AbetTitle } from "entities/abet-title";
 import { ImageViewer } from "entities/image-viewer";
 import { ReactNode } from "react";
-import { Footer } from "./footer";
+import { Header } from "./header";
 import { Telegram } from "./telegram";
 
 interface Props {
@@ -12,7 +12,7 @@ export const DefaultLayout = ({ children }: Props) => {
   return (
     <div className="min-h-[100svh] flex flex-col">
       <ImageViewer />
-      <Footer />
+      <Header />
       <div className="h-16" />
       <AbetTitle />
       <div className="px-[6svw]">{children}</div>
