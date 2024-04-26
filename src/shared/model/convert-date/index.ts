@@ -1,4 +1,6 @@
-export function toRussianDate(utcString: string) {
+export function toRussianDate(utcString?: string) {
+  if (!utcString) return "";
+
   const monthNames = [
     "января",
     "февраля",

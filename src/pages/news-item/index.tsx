@@ -54,11 +54,7 @@ const NewsItem = observer(() => {
                 {newsItemStore.newsItem?.body}
               </p>
               <div className="h-4" />
-              <p>
-                {toRussianDate(
-                  newsItemStore.newsItem ? newsItemStore.newsItem.date : ""
-                )}
-              </p>
+              <p>{toRussianDate(newsItemStore.newsItem?.date)}</p>
             </>
           )}
         </div>
