@@ -43,7 +43,7 @@ const NewsItem = observer(() => {
           ))}
         </div>
         <div className="flex flex-col md:w-[43svw]">
-          <div className="h-10" />
+          <div className="md:h-10 h-2" />
           {newsItemStore.loading ? (
             <Loading className="size-[70px] self-center" />
           ) : (
