@@ -17,7 +17,7 @@ const NewsItem = observer(() => {
     <>
       <div className="h-10" />
       <div className="flex gap-[2svw] max-md:flex-col">
-        <div className="grid grid-cols-4 gap-2 md:w-[43svw]">
+        <div className="grid grid-cols-4 gap-2 md:w-[43svw] h-min">
           {newsItemStore.newsItem?.pictures.slice(0, 5).map((el, index) => (
             <button
               key={index}
