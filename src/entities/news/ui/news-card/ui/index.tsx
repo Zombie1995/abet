@@ -14,7 +14,7 @@ export const NewsCard = ({
   date = "",
 }: Props) => {
   return (
-    <div className="sm:flex md:outline md:outline-2 md:outline-white max-md:border-2 max-md:border-white p-8">
+    <div className="sm:flex md:outline md:outline-2 md:outline-white sm:max-md:border-2 sm:max-md:border-white sm:p-8 max-sm:pt-6">
       {img && (
         <>
           <img

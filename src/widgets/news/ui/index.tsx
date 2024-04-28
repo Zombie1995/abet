@@ -62,10 +62,8 @@ export const News = observer(() => {
           ref={scrollRef}
           className={`${
             showNews ? "h-[70svh]" : "h-0"
-          } transition-all duration-500 flex flex-col gap-6 md:h-[70svh] overflow-y-scroll md:border-2 md:border-white`}
+          } transition-all duration-500 flex flex-col gap-6 md:h-[70svh] overflow-y-scroll md:border-2 md:border-white max-sm:divide-y max-sm:divide-dashed sm:max-md:pt-6`}
         >
-          <div className="md:hidden h-4" />
-
           {newsStore.loading ? (
             <Loading className="self-center size-[96px]" />
           ) : (
@@ -80,7 +78,7 @@ export const News = observer(() => {
               />
             ))
           )}
-          <button className="bg-white min-h-[40px] h-[40px] w-full">
+          <button className="sm:bg-white min-h-[40px] h-[40px] w-full max-sm:text-white">
             Больше новостей
           </button>
         </div>

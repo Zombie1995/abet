@@ -63,9 +63,8 @@ export const Merch = observer(() => {
           ref={scrollRef}
           className={`${
             showMerch ? "h-[70svh]" : "h-0"
-          } transition-all duration-500 sm:grid sm:grid-cols-2 flex flex-col sm:gap-[2svw] gap-6 md:h-[70svh] overflow-y-scroll md:border-2 md:border-white`}
+          } transition-all duration-500 sm:grid sm:grid-cols-2 flex flex-col sm:gap-[2svw] gap-6 md:h-[70svh] overflow-y-scroll md:border-2 md:border-white max-sm:divide-y max-sm:divide-dashed sm:max-md:pt-[2svw]`}
         >
-          <div className="md:hidden min-h-0 col-span-2" />
           {merchStore.loading ? (
             <Loading className="mx-auto col-span-2 size-[96px]" />
           ) : (
@@ -102,7 +101,7 @@ export const Merch = observer(() => {
               />
             </>
           )}
-          <button className="bg-white min-h-[40px] h-[40px] w-full col-span-2">
+          <button className="sm:bg-white min-h-[40px] h-[40px] w-full col-span-2 max-sm:text-white">
             Больше мерча
           </button>
         </div>
