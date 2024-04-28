@@ -10,7 +10,7 @@
     }
 
     p {
-        @apply text-[#ffffff]
+        @apply text-[#ffffff] whitespace-pre-wrap
     }
 
     h1 {
