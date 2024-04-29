@@ -3,14 +3,18 @@ interface Props {
   title: string;
   description: string;
   price: number;
+  currency?: string;
+  buttonName?: string;
   onClick?: () => void;
 }
 
 export const MerchCard = ({
   img,
   title,
-  price,
   description,
+  price,
+  currency = "₽",
+  buttonName = "Купить",
   onClick = () => {},
 }: Props) => {
   return (
@@ -23,12 +27,14 @@ export const MerchCard = ({
       <div className="grow" />
       <div className="min-h-4" />
       <div className="flex items-center justify-between">
-        <p>{price} ₽</p>
+        <p>
+          {price} {currency}
+        </p>
         <button
           className="min-h-[40px] min-w-[120px] w-min bg-white"
           onClick={onClick}
         >
-          Купить
+          {buttonName}
         </button>
       </div>
     </div>

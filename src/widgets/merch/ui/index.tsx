@@ -1,4 +1,4 @@
-import { FakeMerchCard, MerchCard } from "entities/merch";
+import { MerchCard } from "entities/merch";
 import { merchStore } from "entities/merch/model";
 import { observer } from "mobx-react-lite";
 import { useCallback, useRef, useState } from "react";
@@ -83,19 +83,20 @@ export const Merch = observer(() => {
           )}
           {!merchStore.loading && (
             <>
-              <FakeMerchCard
+              <MerchCard
                 img={dimka}
-                title={"НевыДимка худи"}
-                price={"1 Гирос"}
+                title="НевыДимка худи"
+                price={1}
+                currency="Гирос"
                 buttonName="Закончился"
                 description="СТИЛЁВО"
               />
-              <FakeMerchCard
+              <MerchCard
                 img={
                   "https://main-cdn.sbermegamarket.ru/hlr-system/186/284/657/548/182/6/100028800840b0.jpg"
                 }
-                title={"Лаваш"}
-                price={"89 ₽"}
+                title="Лаваш"
+                price={89}
                 buttonName="Под заказ"
                 description="ВКУСНО"
               />
