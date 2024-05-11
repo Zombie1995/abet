@@ -1,4 +1,4 @@
-import axios from "axios";
+import $api from "shared/api/config";
 
 export type MerchItem = {
   id: number;
@@ -13,7 +13,5 @@ type MerchResponse = {
 };
 
 export const fetchMerch = async () => {
-  return (
-    await axios.get<MerchResponse>(`${import.meta.env.VITE_BASE_URL}/merch`)
-  ).data.items;
+  return (await $api.get<MerchResponse>(`/merch`)).data.items;
 };

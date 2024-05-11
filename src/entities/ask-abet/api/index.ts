@@ -1,4 +1,4 @@
-import axios from "axios";
+import $api from "shared/api/config";
 
 type AnswerResponse = {
   message: string;
@@ -6,7 +6,7 @@ type AnswerResponse = {
 
 export const fetchAnswer = async (message: string, character: string) => {
   return (
-    await axios.post<AnswerResponse>(`${import.meta.env.VITE_BASE_URL}/chat`, {
+    await $api.post<AnswerResponse>(`/chat`, {
       message,
       character,
     })

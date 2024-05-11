@@ -1,4 +1,4 @@
-import axios from "axios";
+import $api from "shared/api/config";
 import { ImageType } from "shared/model/types";
 
 export type NewsItem = {
@@ -16,14 +16,12 @@ export type NewsResponse = {
 };
 
 export const fetchNews = async () => {
-  return (
-    await axios.get<NewsResponse>(`${import.meta.env.VITE_BASE_URL}/news`)
-  ).data.items;
+  return (await $api.get<NewsResponse>(`/news`)).data.items;
 };
 
 export const fetchNewsItem = async (id: string) => {
   return (
-    await axios.get<NewsItem>(`${import.meta.env.VITE_BASE_URL}/news`, {
+    await $api.get<NewsItem>(`/news`, {
       params: { id },
     })
   ).data;
