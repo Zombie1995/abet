@@ -24,7 +24,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="h-10" />
+      <div className="h-24" />
       <AskAbet />
       <div className="h-10" />
       <Producers />
