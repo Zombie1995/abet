@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8800:80
-      - 8880:443
+      - 80:80
+      - 443:443
     volumes:
       - /certs/abet:/certs
