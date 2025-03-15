@@ -8,6 +8,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8800:80
-      - 443:443
+      - 8800:443
     volumes:
       - /certs/abet:/certs
